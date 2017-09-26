@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 layout: null
 ---
@@ -23,3 +24,39 @@ layout: null
   </entry>
   {% endfor %}
 </feed>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>This App Changed My Life</title>
+    <description></description>
+    <link>https://PrajayG.github.io</link>
+    <atom:link href="https://prajayg.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Introducing chalk</title>
+        <description>Chalk is a high quality, completely customizable, performant and 100% free blog template for Jekyll.</description>
+        <pubDate>Mon, 17 Oct 2016 00:00:00 +0100</pubDate>
+        <link>https://prajayg.github.io/posts/introducing-chalk</link>
+        <guid isPermaLink="true">https://prajayg.github.io/posts/introducing-chalk</guid>
+      </item>
+    
+      <item>
+        <title>How to configure Chalk</title>
+        <description>Learn more about the config file for Chalk and how to set it up properly.</description>
+        <pubDate>Sun, 16 Oct 2016 00:00:00 +0100</pubDate>
+        <link>https://prajayg.github.io/posts/configuring-chalk</link>
+        <guid isPermaLink="true">https://prajayg.github.io/posts/configuring-chalk</guid>
+      </item>
+    
+      <item>
+        <title>Chalk sample post with all elements</title>
+        <description>Have a look at all the predesigned elements you can use in Chalk.</description>
+        <pubDate>Sat, 15 Oct 2016 00:00:00 +0100</pubDate>
+        <link>https://prajayg.github.io/posts/chalk-sample-post-with-all-elements</link>
+        <guid isPermaLink="true">https://prajayg.github.io/posts/chalk-sample-post-with-all-elements</guid>
+      </item>
+    
+  </channel>
+</rss>
+>>>>>>> 0d4084cc2cb2872b65ae20638cd99040f5fe0d52
