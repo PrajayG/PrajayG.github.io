@@ -1,89 +1,152 @@
-![](_assets/images/documentation/chalk-intro@2x.png)
+# What's `jekyll-minimal-theme`?
 
-Chalk is a high quality, completely customizable, performant and 100% free blog template for Jekyll.
+It's another minimal(istic) Jekyll static site generator theme,
+that is, a ready-to-fork template pack.
 
-## Overview
+See a live demo @ [`henrythemes.github.io/jekyll-minimal-theme` »](http://henrythemes.github.io/jekyll-minimal-theme)
 
-Features:
-  - Dark and Light theme.
-  - Filter on tags.
-  - customizable pagination.
-  - Beautified link sharing in Facebook and other social media.
-  - Automatic time to read post indicator.
-  - Automatic RSS feed.
-  - About page.
-  - 404 page.
-  - SEO optimized.
-  - PageSpeed optimized.
-  - Cross browser support (supports all modern browsers).
-  - Media embed for videos.
-  - Enlarge images on click.
-  - Support for local fonts
+For example:
 
-Integrations
-  - [Google Analytics](https://analytics.google.com/analytics/web/)
-  - [Google Fonts](https://fonts.google.com/)
-  - [Disqus](https://disqus.com/)
-  - [Ionicons](http://ionicons.com/)
-  - Social media links
+```
+├── _config.yml                               # site configuration
+├── _posts                                    # sample blog posts
+|   ├── 2014-05-05-sportdb-update-v192.md     #   filename format:
+|   ├── 2014-10-10-new-repo-baviria-bayern.md #    => YEAR-MONTH-DAY-TITLE.MARKUP
+|   ├── 2014-10-21-sql-views.md
+|   ├── 2014-11-11-new-reop-maps.md
+|   └── 2014-12-15-quick-starter-datafiles.md
+├── _layouts                           
+|   ├── default.html                   # master layout template
+|   └── post.html                      # single blog post template
+├── css                               
+|   ├── _settings.scss                 # style settings (e.g. variables)
+|   └── style.scss                     # master style page
+├── feed.xml                           # web feed template (e.g. in atom format)
+├── archive.html                       # archive template
+└── index.html                         # index template
+```
 
-Used tools
-  - [Autoprefixer](https://github.com/postcss/autoprefixer)
-  - [Circle CI](https://circleci.com/)
-  - [Html-proofer](https://github.com/gjtorikian/html-proofer)
-  - [Jekyll](https://jekyllrb.com/)
-  - [Jekyll assets](https://github.com/jekyll/jekyll-assets)
-  - [Jekyll Sitemap](https://github.com/jekyll/jekyll-sitemap)
-  - [HTML5 Boilerplate](https://html5boilerplate.com/) (Influenced by)
-  - [Kickster](https://kickster.nielsenramon.com/)
-  - [Retina.js](https://imulus.github.io/retinajs/)
-  - [STACSS](https://stacss.nielsenramon.com/)
-  - [Yarn](https://yarnpkg.com)
+will result in (with `permalink: /:title.html`):
+
+```
+└── _site                                # output build folder; site gets generated here
+    ├── css
+    |   └── style.css                    # styles for pages (copied 1:1 as is)
+    ├── sportdb-update-v192.html         # blog post page
+    ├── new-repo-baviria-bayern.html     # another blog post page
+    ├── sql-views.html                   #  ""
+    ├── new-repo-maps.html               #  ""
+    ├── quick-starter-datafiles.html     #  ""
+    ├── feed.xml                         # web feed (e.g. in atom format)
+    ├── archive.html                     # archive page
+    └── index.html                       # index page
+```
+
 
 ## Usage
 
-### Installation
+To use - delete all sample posts in the `_posts` folder and
+change the settings in `_config.yml` to use your own `site.title`
+and `site.url`:
 
-If you haven't installed the following tools then go ahead and do so (make sure you have [Homebrew](https://brew.sh/) installed):
+```
+title:   'Jekyll Minimal Theme'
+url:     'http://henrythemes.github.io/jekyll-minimal-theme'
+author:
+  name:  'Jekyll Minimal Theme Team'
+```
 
-    brew install ruby
-    brew install npm
 
-On windows, install Ruby and Node with the installers found here:
+## Color n Typography Settings (in `css/_settings.scss`)
 
-  - [Ruby](https://rubyinstaller.org/)
-  - [Node.js](https://nodejs.org/en/download/)
+Typography (Fonts):
 
-Next setup your environment:
+~~~
+$font-family:       "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    bin/setup
+$code-font-family:  Menlo, Monaco, "Courier New", monospace;
+~~~
 
-### Development
+Colors:
 
-Run Jekyll:
+~~~
+$masthead-color:         #505050;
+$masthead-small-color:   #C0C0C0;
 
-    bundle exec jekyll serve
+$post-title-color:       #303030;
+$post-date-color:        #9a9a9a;
 
-## Deploy to GitHub Pages
 
-Before you deploy, commit your changes to any working branch except the `gh-pages` one then run the following command:
+$body-color:            #515151;
+$body-background-color: #fff;
 
-    bin/deploy
+$link-color:            #268bd2;
 
-**Important note**: Chalk does not support the standard way of Jekyll hosting on GitHub Pages. You need to deploy your working branch (can be any branch, for xxx.github.io users: use another branch than master) with the `bin/deploy` script. This is because Chalk uses Jekyll plugins that aren't supported by GitHub pages. The `bin/deploy` script will automatically build the entire project, then push it to the `gh-pages` branch of your repo. The script creates that branch for you so no need to create it yourself.
+$headings-color:        #313131;    // h1,h2,h3,h4,h5,h6
 
-You can find more info on how to use the `gh-pages` branch and a custom domain [here](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/).
+$strong-color:          #303030;    // strong
 
-[View this](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci) for more info about automated deployment with Circle CI.
+$pre-background-color:  #f9f9f9;    // pre
+
+$blockquote-color:        #7a7a7a;  // blockquote
+$blockquote-border-color: #e5e5e5;
+
+$table-border-color:         #e5e5e5;
+$table-odd-background-color: #f9f9f9;
+~~~
+
+A big thanks to the Poole theme; the `jekyll-minimal-theme` started out w/
+the typography and color settings from the Poole theme.
+
+
+## Alternative (Minimal) Jekyll Themes
+
+- Poole Theme by Mark Otto - [(Source)](https://github.com/poole/poole)
+
+- Pixyll Theme by John Otander - [(Source)](https://github.com/johnotander/pixyll)
+
+~~~
+in _main.scss:
+  font-family:     "Merriweather", "PT Serif", Georgia, "Times New Roman", serif;
+  code-font-family: Menlo, Monaco, "Courier New", monospace;
+  h1-h6|button|form|pagination|footer -font-family:
+                   'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+
+in _basscss.scss:
+  font-family:       'Helvetica Neue', Helvetica, sans-serif;
+~~~
+
+- Hikari Theme by Mathieu Mayer-Mazzoli - [(Source)](https://github.com/m3xm/hikari-for-Jekyll)
+
+~~~
+in components/_syntax.scss:
+  code-font-family:    'Courier', monospace;
+in base/_variables.scss:
+  font-family:         'Open Sans', sans-serif;
+  variant-font-family: 'Lora', Georgia, serif;
+in base/_global.scss:
+  h1-h6-font-family:  'Open Sans', sans-serif;
+in base/_reset.scss:
+  font-family:         sans-serif;
+  code-font-family:    monospace, monospace;
+~~~
+
+
+### More Themes
+
+See the [Dr. Jekyll's Themes](https://drjekyllthemes.github.io) directory.
+
+### More Quick Starter Wizard Scripts
+
+See the [Mr. Hyde's Scripts](https://github.com/mrhydescripts/scripts) library.
+
 
 ## License
 
-MIT License
+![](https://publicdomainworks.github.io/buttons/zero88x31.png)
+The theme and scripts are dedicated to the public domain. Use it as you please with no restrictions whatsoever.
 
-## Contributing
+## Questions? Comments?
 
-1. Fork it (https://github.com/[my-github-username]/chalk/fork)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Send them along to the [wwwmake forum](http://groups.google.com/group/wwwmake).
+Thanks!
