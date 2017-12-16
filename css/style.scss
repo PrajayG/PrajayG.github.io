@@ -8,6 +8,10 @@
 @import 'settings';
 
 
+@import url('https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono');
+
+
+
 html {
   font-family: $font-family;
   font-size:   20px;
@@ -69,6 +73,9 @@ h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-family: $font-family2;
+  line-height: 1.6;
+
 }
 
 strong {
