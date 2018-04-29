@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post
 title: Paris Review - Truman Capote
 date: '2018-04-26T22:05:07+01:00'
 ---
